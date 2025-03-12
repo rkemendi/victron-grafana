@@ -1,29 +1,29 @@
 {
-  "name": "Example devcontainer for add-on repositories",
-  "image": "ghcr.io/home-assistant/devcontainer:2-addons",
-  "appPort": ["7123:8123", "7357:4357"],
+  "name": "Venus influx loader",
+  "image": "victronenergy/venus-influx-loader:1.5",
+  "appPort": ["8088:8088"],
   "postStartCommand": "bash devcontainer_bootstrap",
-  "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
+  "runArgs": [ "bin/venus-influx-loader", "--enable-discovery-api" ],
   "containerEnv": {
     "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
   },
-  "customizations": {
-    "vscode": {
-      "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
-      "settings": {
-        "terminal.integrated.profiles.linux": {
-          "zsh": {
-            "path": "/usr/bin/zsh"
-          }
-        },
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "editor.formatOnPaste": false,
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true,
-        "files.trimTrailingWhitespace": true
-      }
-    }
-  },
+  // "customizations": {
+  //   "vscode": {
+  //     "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
+  //     "settings": {
+  //       "terminal.integrated.profiles.linux": {
+  //         "zsh": {
+  //           "path": "/usr/bin/zsh"
+  //         }
+  //       },
+  //       "terminal.integrated.defaultProfile.linux": "zsh",
+  //       "editor.formatOnPaste": false,
+  //       "editor.formatOnSave": true,
+  //       "editor.formatOnType": true,
+  //       "files.trimTrailingWhitespace": true
+  //     }
+  //   }
+  // },
   "mounts": [
     "type=volume,target=/var/lib/docker",
     "type=volume,target=/mnt/supervisor"
