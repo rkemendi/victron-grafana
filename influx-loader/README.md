@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Example add-on
+# Home Assistant Add-on: Victron Energy Influx loader
 
 _Example add-on to use as a blueprint for new add-ons._
 

@@ -1,4 +1,3 @@
-# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: Victron Grafana Home Assistant add-on repository
+name: Victron Energy Influx loader as Home Assistant add-on repository
 url: 'https://github.com/rkemendi/victron-grafana'
 maintainer: Maintainer <hello@theshell.online>
